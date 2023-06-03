@@ -1,0 +1,65 @@
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(#194b67, #23022d);
+}
+
+.container {
+  font-size: 13vw;
+  line-height: 0.8;
+  font-weight: bold;
+  font-family: "Secular One", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3vh;
+}
+
+.intro {
+  font-size: 2vw;
+  font-weight: bold;
+  color: rgb(223, 224, 251);
+  margin-top: 5vw;
+  margin-left: 12vw;
+}
+.icon {
+  width: 4vw;
+  height: 4vw;
+  margin-top: 2vw;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.freelance {
+  font-size: 1.5vw;
+  text-align: right;
+  line-height: 1.5;
+  color: rgb(223, 224, 251);
+}
+
+.freelance-p {
+  margin-right: 12vw;
+  margin-bottom: 10vh;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+.margin {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.form-group {
+  font-size: 2vw;
+}
