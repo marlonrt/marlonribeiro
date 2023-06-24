@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marlon Ribeiro</title>
+    <link rel="icon" type="image/png" href="media/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -15,74 +21,102 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Secular+One&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div class="margin">
         <div class="row align-items-center">
           <div class="col">
-            <div class="intro text-left">Oi, 👋 eu sou o Marlon</div>
+            <div
+              class="intro text-left"
+              data-aos="fade-down-right"
+              data-aos-easing="linear"
+              data-aos-delay="0"
+              data-aos-duration="550"
+            >
+              Oi, 👋 eu sou o Marlon
+            </div>
           </div>
-          <div class="col">
+          <div
+            class="col"
+            data-aos="fade-left"
+            data-aos-delay="450"
+            data-aos-duration="550"
+          >
             <a href="https://www.linkedin.com/in/marlonrt/" target="_blank"
               ><img class="icon" src="media/linkedin.svg" alt="LinkedIn"
             /></a>
             <a href="https://github.com/marlonrt" target="_blank"
               ><img class="icon" src="media/github.svg" alt="GitHub"
             /></a>
-            <a
-              href="https://marlon-frontend-dev.tiiny.site/"
-              target="_blank"
+            <a href="https://marlon-frontend-dev.tiiny.site/" target="_blank"
               ><img class="icon" src="media/cv.svg" alt="CV"
             /></a>
           </div>
         </div>
         <div class="row">
-          <div class="col no-click">
+          <div
+            class="col no-click"
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-delay="250"
+            data-aos-duration="550"
+          >
             FRONTEND
             <br />
             DEVELOPER
           </div>
         </div>
         <div class="row">
-          <div class="col freelance">
-            tenho 34 anos, sou desenvolvedor frontend com 1 ano
+          <div
+            class="col freelance"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="550"
+          >
+            Tenho 34 anos, sou desenvolvedor frontend com 1 ano
             <p class="freelance-p">
               de experiência trabalhando como freelancer.
             </p>
           </div>
         </div>
       </div>
-      <div class="iframe-margin">
-        <iframe
-          class="iframe"
-          src="projetos.html"
-          frameborder="1"
-          width="100%"
-          height="600px"
-        ></iframe>
+      <div
+        class="object-container div-projects"
+        data-aos="flip-down"
+        data-aos-duration="1500"
+      >
+        <object class="object" data="projetos.html" type="text/html"></object>
       </div>
+      <footer>&copy; 2023 Marlon Ribeiro.</footer>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+
+    <div id="audioControls" style="position: fixed; top: 10px; right: 10px; opacity: 1; transition: opacity 0.3s;">
+      <span id="currentSongName"></span>
+      <i id="playPauseIcon" class="fas fa-play" style="cursor: pointer;"></i>
+      <i id="nextSongIcon" class="fas fa-forward-step" style="cursor: pointer; margin-left: 10px;"></i>
+      <input id="volumeRange" type="range" min="0" max="100" value="100">
+    </div>
+     
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
