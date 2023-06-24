@@ -7,18 +7,18 @@ var playlist = [
 ];
 var currentSongIndex = 0;
 
-function initAudio(autoplay = true) {
-    audio = new Howl({
-      src: [playlist[currentSongIndex]],
-      html5: true,
-      onend: function () {
-        playNext();
-      },
-      onloaderror: function () {
-        console.error('Erro ao carregar o arquivo de áudio:', playlist[currentSongIndex]);
-      },
-      volume: 1.0
-    });
+function initAudio() {
+  audio = new Howl({
+    src: [playlist[currentSongIndex]],
+    html5: true,
+    onend: function () {
+      playNext();
+    },
+    onloaderror: function () {
+      console.error('Erro ao carregar o arquivo de áudio:', playlist[currentSongIndex]);
+    },
+    volume: 1.0
+  });
 
   // Obter o nome do arquivo sem a extensão e com a primeira letra maiúscula
   const filePathParts = playlist[currentSongIndex].split("/");
@@ -29,18 +29,6 @@ function initAudio(autoplay = true) {
     fileNameWithoutExtension.slice(1);
 
   document.getElementById("currentSongName").textContent = formattedSongName;
-
-  if (autoplay) {
-    audio.once("load", function () {
-      audio.play();
-      document.getElementById("playPauseIcon").classList.remove("fa-play");
-      document.getElementById("playPauseIcon").classList.add("fa-pause");
-    });
-  } else {
-    audio.once("load", function () {
-      document.getElementById("playPauseIcon").classList.add("fa-play");
-    });
-  }
 }
 
 function togglePlayPause() {
@@ -68,7 +56,7 @@ function playNext() {
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-  initAudio(true); // Ativa a reprodução automática inicial
+  initAudio();
 });
 
 document.getElementById("playPauseIcon").addEventListener("click", function () {
@@ -100,14 +88,14 @@ volumeRange.addEventListener("input", function () {
 var audioControls = document.getElementById("audioControls");
 var prevScrollPos = window.pageYOffset;
 
-window.onscroll = function() {
+window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
-  
+
   if (prevScrollPos > currentScrollPos) {
     audioControls.style.opacity = "1";
   } else {
     audioControls.style.opacity = "0";
   }
-  
+
   prevScrollPos = currentScrollPos;
 };
