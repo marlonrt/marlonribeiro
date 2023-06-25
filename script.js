@@ -64,8 +64,6 @@ function playNext() {
   audio.play(); // Play the next song automatically
 }
 
-
-
 window.addEventListener("DOMContentLoaded", function () {
   document.getElementById("playPauseIcon").addEventListener("click", function () {
     togglePlayPause();
@@ -75,22 +73,42 @@ window.addEventListener("DOMContentLoaded", function () {
     playNext();
   });
 
-  var volumeRange = document.getElementById("volumeRange");
-  var audioVolume = document.getElementById("audioVolume");
+  var volumeDecrease = document.getElementById("volumeDecrease");
+  var volumeIncrease = document.getElementById("volumeIncrease");
 
-  volumeRange.addEventListener("input", function () {
-    var volume = parseFloat(volumeRange.value / 100);
-    audio.volume(volume);
-
-    // Atualizar o ícone de volume com base no valor do slider
-    if (volume === 0) {
-      audioVolume.className = "fas fa-volume-mute";
-    } else if (volume < 0.5) {
-      audioVolume.className = "fas fa-volume-down";
-    } else {
-      audioVolume.className = "fas fa-volume-up";
+  volumeDecrease.addEventListener("click", function () {
+    var volume = audio.volume() - 0.1;
+    if (volume < 0) {
+      volume = 0;
     }
+    audio.volume(volume);
+  });
+
+  volumeIncrease.addEventListener("click", function () {
+    var volume = audio.volume() + 0.1;
+    if (volume > 1) {
+      volume = 1;
+    }
+    audio.volume(volume);
   });
 
   initAudio();
 });
+
+var prevScrollPos = window.pageYOffset;
+var buttonContainer = document.getElementById("audioControls");
+
+window.addEventListener("scroll", function() {
+  var currentScrollPos = window.pageYOffset;
+
+  if (prevScrollPos > currentScrollPos) {
+    // Rolar para cima
+    buttonContainer.style.opacity = "1";
+  } else {
+    // Rolar para baixo
+    buttonContainer.style.opacity = "0";
+  }
+
+  prevScrollPos = currentScrollPos;
+});
+

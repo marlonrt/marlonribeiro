@@ -91,8 +91,15 @@ footer {
 }
 
 #audioControls {
+  margin-bottom: 1vw;
+  font-size: 1.2vw;
   display: flex;
   align-items: center;
+}
+
+#volumeDecrease,
+#volumeIncrease {
+  color: #b1454a;
 }
 
 #currentSongName {
@@ -124,4 +131,5 @@ footer {
 #volumeRange::-ms-thumb {
   background-color: #b1454a;
 }
+
 
